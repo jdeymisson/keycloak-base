@@ -8,7 +8,7 @@ function App() {
   return (
     <ReactKeycloakProvider authClient={keycloak} initOptions={{onLoad: "login-required"}}>
       <div className="App">
-        <h2>teste</h2>
+        <h2>Componente App</h2>
         <Home />
       </div>
     </ReactKeycloakProvider>

@@ -2,19 +2,23 @@ import { useKeycloak } from "@react-keycloak/web";
 
 const Home = () => {
     const { keycloak, initialized } = useKeycloak();
-    console.log(keycloak.logout, "****")
+
+    console.log(keycloak.authenticated)
+    //Sempre vem underfined
+    //Estrutura ai abaixo foi feito em cima da doc, bem simples mesmo,
     return(
         <div>
-            <button onClick={() => keycloak.logout()}>sair</button>
-        {/* <div>{`User is ${
-          !keycloak.authenticated ? 'NOT ' : ''
-        }authenticated`}</div>
-  
-        {!!keycloak.authenticated && (
-          <button type="button" onClick={() => keycloak.logout()}>
-            Logout
-          </button>
-        )} */}
+            <div>{`Usuário está ${
+                !keycloak.authenticated ? 'Não ' : ''
+            } authenticated`}</div>
+
+            {!!keycloak.authenticated && (
+                <button type="button" onClick={() => keycloak.logout()}>
+               Sair
+                </button>
+            )} 
+
+            
       </div>
     )
 }
